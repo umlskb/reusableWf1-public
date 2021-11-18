@@ -13,6 +13,9 @@ on:
         default: 'World'
         required: true
         type: string
+    secrets:
+      token:
+        required: false
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
@@ -23,6 +26,9 @@ on:
         default: 'World'
         # Input has to be provided for the workflow to run
         required: true
+      secrets:
+        token:
+          required: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
