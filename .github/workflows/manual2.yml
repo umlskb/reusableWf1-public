@@ -25,6 +25,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }} // from public/internal workflow"
+    - id: foo
+      uses: umlskb/reusableWf1-public/.github/actions/hello-world-composite-action@v1
+      with:
+        who-to-greet: ${{ github.event.inputs.name }}
+    - run: echo random-number ${{ steps.foo.outputs.random-number }}
+      shell: bash
