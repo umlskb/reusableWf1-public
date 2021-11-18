@@ -1,10 +1,18 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Manual+reusable workflow
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
+  workflow_call:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        description: 'Person to greet'
+        default: 'World'
+        required: true
+        type: string
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
