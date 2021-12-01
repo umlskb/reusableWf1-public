@@ -19,7 +19,7 @@ on:
     outputs:
       sample-out:
         description: "sample-output"
-        value: ${{ jobs.greet.outputs.job_out }}
+        value: ${{ jobs.greet.outputs.job-out }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
