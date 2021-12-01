@@ -36,6 +36,6 @@ jobs:
         who-to-greet: ${{ github.event.inputs.name }}
     - run: |
         echo random-number ${{ steps.foo.outputs.random-number }}
-        echo "::output:step-out:${{ steps.foo.outputs.random-number }}"
+        echo "::set-output name=step-out:${{ steps.foo.outputs.random-number }}"
       id: random
       shell: bash
