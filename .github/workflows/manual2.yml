@@ -17,6 +17,9 @@ on:
       token:
         required: false
     outputs:
+      static-out:
+        description: "static output"
+        value: "my static value"
       sample-out:
         description: "sample-output"
         value: ${{ jobs.greet.outputs.job-out }}
